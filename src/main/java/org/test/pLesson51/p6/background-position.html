@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>CSS</title>
+</head>
+
+<style>
+   .background>div {
+      border: 1px solid black;
+      float: left;
+      margin: 10px;
+   }
+
+   .background>div>div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+      background-image: url(cherkasy.jpg);
+      background-repeat: no-repeat;
+   }
+
+   .position {
+      background-position: 20px 15px;
+   }
+
+   .position-top {
+      background-position: top ;
+   }
+
+   .position-right {
+      background-position: right ;
+   }
+
+   .position-bottom {
+      background-position: bottom ;
+   }
+
+   .position-left {
+      background-position: left ;
+   }
+
+   .position-top-right{
+      background-position: top right; 
+   }
+
+   .position-bottom-left {
+      background-position: bottom left;
+   }
+</style>
+
+
+<body>
+   <a href="../index.html">Головна</a> <br>
+   <a href="p6-main.html"> background</a> <br>
+
+   <hr>
+   <h1>background-position</h1>
+
+   <div class="background">
+
+      <div>
+         <h3>background-position : none</h3>
+         <div></div>
+      </div>
+
+      <div>
+         <h3>background-position : 20px 15px;</h3>
+         <div class="position"></div>
+      </div>
+
+      <div>
+         <h3>background-position : top</h3>
+         <div class="position-top"></div>
+      </div>
+
+      <div>
+         <h3>background-position : right</h3>
+         <div class="position-right"></div>
+      </div>
+
+      <div>
+         <h3>background-position : bottom</h3>
+         <div class="position-bottom"></div>
+      </div>
+
+      <div>
+         <h3>background-position : left</h3>
+         <div class="position-left"></div>
+      </div>
+
+      <div>
+         <h3>background-position : top right</h3>
+         <div class="position-top-right"></div>
+      </div>
+
+      <div>
+         <h3>background-position : bottom left</h3>
+         <div class="position-bottom-left"></div>
+      </div>
+
+
+   </div>
+
+
+</body>
+
+</html>

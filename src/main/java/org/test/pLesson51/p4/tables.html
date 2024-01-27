@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Стилізація таблиць</title>
+   <link rel="stylesheet" type="text/css" href="links.css" />
+</head>
+
+<style>
+   h3 {
+      color: rgb(47, 53, 228);
+   }
+
+   table {
+      border: 1px solid #ccc;
+      border-spacing: 3px;
+   }
+
+   td,
+   th {
+      border: solid 1px #ccc;
+   }
+
+   .collapsed {
+      border-collapse: collapse;
+      empty-cells: hide;
+      caption-side: bottom;
+      table-layout: auto;
+   }
+   .collapsed td{
+      height: 40px;
+   }
+
+
+   .separated {
+      border-collapse: separate;
+      empty-cells: show;
+   }
+
+   .separated td{
+      height: 40px;
+      vertical-align: bottom;
+   }
+
+</style>
+
+
+<body>
+   <a href="../index.html">Головна</a> <br>
+   <a href="fonts.html">Тексти</a> <br>
+
+   <h1>Стилізація таблиць</h1>
+
+   <hr>
+
+   <pre>
+      .collapsed {
+         border-collapse: collapse;
+         empty-cells: hide;
+         caption-side: bottom;
+      }
+      .collapsed td{
+         height: 40px;
+      }
+   </pre>
+   <table class="collapsed">
+      <caption>Новинки 2023 року</caption>
+      <thead>
+         <tr>
+            <th>Product</th>
+            <th>Product Line</th>
+            <th>Price</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>Harley Davidson</td>
+            <td>Motorcycles</td>
+            <td>48.81</td>
+         </tr>
+         <tr>
+            <td>Black Hawk</td>
+
+         </tr>
+         <tr>
+            <td>Honda Civic</td>
+            <td>Cars</td>
+            <td>93.89</td>
+         </tr>
+      </tbody>
+   </table>
+
+   <hr>
+
+
+   <pre>
+      .separated {
+         border-collapse: separate;
+         empty-cells: show;
+      }
+      .separated td{
+         height: 40px;
+         vertical-align: bottom;
+      }
+   </pre>
+   <table class="separated">
+      <caption>Новинки 2022 року</caption>
+      <thead>
+         <tr>
+            <th>Product</th>
+            <th>Product Line</th>
+            <th>Price</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>Harley Davidson</td>
+            <td>Motorcycles</td>
+            <td>48.81</td>
+         </tr>
+         <tr>
+            <td>Black Hawk</td>
+            <td>Planes</td>
+            <td>77.27</td>
+         </tr>
+         <tr>
+            <td>Honda Civic</td>
+            <td>Cars</td>
+            <td>93.89</td>
+         </tr>
+      </tbody>
+   </table>
+
+   <hr>
+
+
+
+</body>
+
+</html>

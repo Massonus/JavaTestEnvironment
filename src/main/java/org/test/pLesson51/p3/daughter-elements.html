@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>CSS</title>
+   <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<style>
+   a:first-child {
+      color: red;
+   }
+
+   a:last-child {
+      color: blue;
+   }
+
+   p:only-child {
+      color: greenyellow;
+   }
+
+   tr:nth-child(odd) {
+      background-color: #bbb;
+   }
+
+   tr:nth-child(even) {
+      background-color: #fff;
+   }
+</style>
+
+<body>
+   <h1>Псевдокласи дочірніх елементів</h1>
+   <a href="../index.html">Головна</a> <br>
+   <a href="pseudo-classes.html">Псевдокласи</a> <br>
+   <hr>
+
+   <h2>a:first-child AND a:last-child</h2>
+   <h3>Parent1</h3>
+   <div>
+      <a>child1</a><br>
+      <a>child2</a><br>
+      <a>child3</a>
+   </div>
+   <h3>Parent2</h3>
+   <div>
+      <p>child1</p>
+      <a>child2</a><br>
+      <a>child3</a>
+   </div>
+   <hr>
+
+   <h2>p:only-child </h2>
+   <h3>Parent4</h3>
+   <div>
+      <p>child1</p>
+   </div>
+   <h3>Parent5</h3>
+   <div>
+      <p>child1</p>
+      <p>child2</p>
+   </div>
+   <h3>Parent6</h3>
+   <div>
+      <p>child1</p>
+   </div>
+   <hr>
+
+   <h2>tr:nth-child(even) AND (odd)</h2>
+   <table>
+      <tr>
+         <td>Harley Davidson</td>
+         <td>Motorcycles</td>
+         <td>48.81</td>
+      </tr>
+      <tr>
+         <td>Black Hawk</td>
+         <td>Planes</td>
+         <td>77.27</td>
+      </tr>
+      <tr>
+         <td>Honda Civic</td>
+         <td>Cars</td>
+         <td>93.89</td>
+      </tr>
+      <tr>
+         <td>Harley Davidson</td>
+         <td>Motorcycles</td>
+         <td>48.81</td>
+      </tr>
+      <tr>
+         <td>Black Hawk</td>
+         <td>Planes</td>
+         <td>77.27</td>
+      </tr>
+      <tr>
+         <td>Honda Civic</td>
+         <td>Cars</td>
+         <td>93.89</td>
+      </tr>
+   </table>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+CREATE INDEX idx_id ON MOCK_DATA (id);

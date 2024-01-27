@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>CSS</title>
+</head>
+
+<style>
+   .background>div {
+      border: 1px solid black;
+      float: left;
+      margin: 10px;
+   }
+
+   .background>div>div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+      background-image: url(cherkasy.jpg);
+   }
+
+   .contain {
+      background-size: contain;
+   }
+
+   .cover {
+      background-size: cover;
+   }
+
+   .auto {
+      background-size: auto;
+   }
+
+   .size1 {
+      background-size: 100% 100%;
+   }
+
+   .size2 {
+      background-size: 200px 200px;
+   }
+
+   .size3 {
+      background-size: 300px auto;
+   }
+   
+   .size4 {
+      background-size: auto 300px;
+   }
+</style>
+
+
+<body>
+   <a href="../index.html">Головна</a> <br>
+   <a href="p6-main.html"> background</a> <br>
+
+   <hr>
+   <h1>background-size</h1>
+
+   <div class="background">
+
+      <div>
+         <h3>background-size : contain;</h3>
+         <div class="contain"></div>
+      </div>
+
+      <div>
+         <h3>background-size : cover;</h3>
+         <div class="cover"></div>
+      </div>
+
+      <div>
+         <h3>background-size : auto;</h3>
+         <div class="auto"></div>
+      </div>
+
+      <div>
+         <h3> background-size: 100% 100%;</h3>
+         <div class="size1"></div>
+      </div>
+
+      <div>
+         <h3> background-size: 200px 200px;</h3>
+         <div class="size2"></div>
+      </div>
+
+      <div>
+         <h3> background-size: 300px auto;</h3>
+         <div class="size3"></div>
+      </div>
+
+      <div>
+         <h3> background-size: auto 300px;</h3>
+         <div class="size4"></div>
+      </div>
+   </div>
+
+
+</body>
+
+</html>

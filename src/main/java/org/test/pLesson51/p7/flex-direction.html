@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>CSS</title>
+</head>
+
+<style>
+   .flex-container {
+      display: flex;
+      border: 1px solid #ccc;
+   }
+
+   .row {
+      flex-direction: row;
+   }
+
+   .row-reverse {
+      flex-direction: row-reverse;
+   }
+
+   .column {
+      flex-direction: column;
+   }
+
+   .column-reverse {
+      flex-direction: column-reverse;
+   }
+
+   .flex-item {
+      text-align: center;
+      font-size: 1.1em;
+      padding: 1.5em;
+      color: white;
+   }
+
+   .color1 {
+      background-color: #675BA7;
+   }
+
+   .color2 {
+      background-color: #9BC850;
+   }
+
+   .color3 {
+      background-color: #A62E5C;
+   }
+</style>
+
+
+<body>
+   <h1>flex-direction</h1>
+   <a href="../index.html">Головна</a> <br>
+   <a href="p7-main.html">Flexbox</a> <br>
+
+   <hr>
+
+   <h3>flex-direction: row;</h3>
+   <div class="flex-container row">
+      <div class="flex-item color1">Flex Item 1</div>
+      <div class="flex-item color2">Flex Item 2</div>
+      <div class="flex-item color3">Flex Item 3</div>
+   </div>
+
+   <h3>flex-direction: row-reverse;</h3>
+   <div class="flex-container row-reverse">
+      <div class="flex-item color1">Flex Item 1</div>
+      <div class="flex-item color2">Flex Item 2</div>
+      <div class="flex-item color3">Flex Item 3</div>
+   </div>
+
+   <h3>flex-direction: column;</h3>
+   <div class="flex-container column">
+       <div class="flex-item color1">Flex Item 1</div>
+       <div class="flex-item color2">Flex Item 2</div>
+       <div class="flex-item color3">Flex Item 3</div>
+   </div>
+    
+   <h3>flex-direction: column-reverse;</h3>
+   <div class="flex-container column-reverse">
+       <div class="flex-item color1">Flex Item 1</div>
+       <div class="flex-item color2">Flex Item 2</div>
+       <div class="flex-item color3">Flex Item 3</div>
+   </div>
+
+
+
+
+
+</body>
+
+</html>

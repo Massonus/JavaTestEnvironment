@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>CSS</title>
+</head>
+
+<style>
+   .flex-container-basis {
+      display: flex;
+      border: 1px #ccc solid;
+   }
+
+   .flex-item {
+      text-align: center;
+      font-size: 1em;
+      padding: 1.2em;
+      color: white;
+   }
+
+   .item1 {
+      background-color: #675BA7;
+      flex-basis: auto;
+      width: 150px;
+   }
+
+   .item2 {
+      background-color: #9BC850;
+      flex-basis: auto;
+      width: auto;
+   }
+
+   .item3 {
+      background-color: #A62E5C;
+      flex-basis: 200px;
+      width: 150px;
+   }
+
+
+
+   .flex-container-shrink {
+      display: flex;
+      border: 1px #ccc solid;
+      width: 400px;
+   }
+
+   .item4 {
+      background-color: #675BA7;
+      flex-basis: 200px;
+      flex-shrink: 1;
+   }
+
+   .item5 {
+      background-color: #9BC850;
+      flex-basis: 200px;
+      flex-shrink: 2;
+   }
+
+   .item6 {
+      background-color: #A62E5C;
+      flex-basis: 200px;
+      flex-shrink: 3;
+   }
+
+   .item7 {
+      background-color: #675BA7;
+      flex-grow: 0;
+   }
+
+   .item8 {
+      background-color: #9BC850;
+      flex-grow: 1;
+   }
+
+   .item9 {
+      background-color: #A62E5C;
+      flex-grow: 2;
+   }
+</style>
+
+
+<body>
+   <h1>flex-basis, flex-shrink та flex-grow</h1>
+   <a href="../index.html">Головна</a> <br>
+   <a href="p7-main.html">Flexbox</a> <br>
+
+   <hr>
+
+   <div class="flex-container-basis">
+      <div class="flex-item item1">flex-basis: auto; <br> width: 150px;</div>
+      <div class="flex-item item2">flex-basis: auto; <br> width: auto;</div>
+      <div class="flex-item item3">flex-basis: 200px; <br> width: 150px;</div>
+   </div>
+
+   <div class="flex-container-shrink">
+      <div class="flex-item item4">flex-shrink: 1; <br> flex-basis: 200px;</div>
+      <div class="flex-item item5">flex-shrink: 2; <br> flex-basis: 200px;</div>
+      <div class="flex-item item6">flex-shrink: 3; <br> flex-basis: 200px;</div>
+   </div>
+
+   <div class="flex-container-basis">
+      <div class="flex-item item7">flex-grow: 0;</div>
+      <div class="flex-item item8">flex-grow: 1;</div>
+      <div class="flex-item item9">flex-grow: 2;</div>
+   </div>
+
+</body>
+
+</html>

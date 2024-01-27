@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width" />
+   <title>Flexbox в CSS3</title>
+   <style>
+      * {
+         box-sizing: border-box;
+      }
+
+      html,
+      body {
+         padding: 0;
+         margin: 0;
+         font-family: verdana, arial, sans-serif;
+      }
+
+      body {
+         color: #fff;
+         font-size: 1.1em;
+         padding: 1em;
+         display: flex;
+         flex-direction: column;
+      }
+
+      main {
+         display: flex;
+         flex-direction: column;
+      }
+
+      article {
+         background-color: #546e7a;
+         flex: 2 2 12em;
+         padding: 1em;
+      }
+
+      nav,
+      aside {
+         flex: 1;
+         background-color: #455a64;
+      }
+
+      nav {
+         order: -1;
+         text-align: center;
+      }
+
+      header,
+      footer {
+         flex: 0 0 5em;
+         background-color: #37474f;
+      }
+
+      @media screen and (min-width: 600px) {
+
+         body {
+            min-height: 100vh;
+         }
+
+         main {
+            flex-direction: row;
+            min-height: 100%;
+            flex: 1 1 auto;
+         }
+      }
+
+      a:link {
+         color: blue;
+         text-decoration: none
+      }
+
+      a:visited {
+         color: pink;
+         text-decoration: none
+      }
+
+      a:hover {
+         color: red;
+         text-decoration: underline
+      }
+
+      a:active {
+         color: yellow;
+         text-decoration: underline
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <p>Header</p>
+   </header>
+   <main>
+      <article>
+         <h1>Flexbox</h1>
+         <p>Flexible Box Layout —  модуль, що визначає особливий режим верстки, який називається flex layout. 
+            Завдяки Flexbox простіше створювати складні, комплексні інтерфейси, де ми з легкістю можемо перевизначати напрямок та вирівнювання елементів або створювати адаптивні табличні представлення.
+            Основними складовими компонування flexbox є flex container та flex items. 
+            Flex container — це елемент, усередині якого розміщені flex-елементи.</article>
+      <nav>
+         <a href="../index.html">Головна</a> <br>
+         <a href="p7-main.html">Flexbox</a> <br>
+      </nav>
+      <aside>
+         <p>Sidebar</p>
+      </aside>
+   </main>
+   <footer>
+      <p>Footer</p>
+   </footer>
+</body>
+
+</html>

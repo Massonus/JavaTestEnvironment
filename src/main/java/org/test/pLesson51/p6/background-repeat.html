@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <title>CSS</title>
+</head>
+
+<style>
+   .background>div {
+      border: 1px solid black;
+      float: left;
+      margin: 10px;
+   }
+
+   .background>div>div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+      background-image: url(cherkasy.jpg);
+   }
+
+   .repeat-x {
+      background-repeat: repeat-x;
+   }
+
+   .repeat-y {
+      background-repeat: repeat-y;
+   }
+
+   .repeat {
+      background-repeat: repeat;
+   }
+
+   .space {
+      background-repeat: space;
+   }
+
+   .round {
+      background-repeat: round;
+   }
+
+   .no-repeat {
+      background-repeat: no-repeat;
+   }
+</style>
+
+
+<body>
+   <a href="../index.html">Головна</a> <br>
+   <a href="p6-main.html"> background</a> <br>
+
+   <hr>
+   <h1>background-repeat</h1>
+
+   <div class="background">
+
+      <div>
+         <h3>background-repeat: repeat-x;</h3>
+         <div class="repeat-x"></div>
+      </div>
+
+      <div>
+         <h3>background-repeat: repeat-y;</h3>
+         <div class="repeat-y"></div>
+      </div>
+
+      <div>
+         <h3>background-repeat: repeat;</h3>
+         <div class="repeat"></div>
+      </div>
+
+      <div>
+         <h3>background-repeat: space;</h3>
+         <div class="space"></div>
+      </div>
+
+      <div>
+         <h3>background-repeat: round;</h3>
+         <div class="round"></div>
+      </div>
+
+      <div>
+         <h3>background-repeat: no-repeat;</h3>
+         <div class="no-repeat"></div>
+      </div>
+   </div>
+
+
+</body>
+
+</html>
