@@ -3,7 +3,7 @@ package org.test.TestTask57.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestTask57.entity.Homework;
-import org.test.TestTask57.repo.HomeworkRepoTest;
+import org.test.TestTask57.repo.HomeworkRepo;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -11,10 +11,10 @@ import java.util.Scanner;
 @Service
 public class HomeworkService {
 
-    private final HomeworkRepoTest homeworkRepo;
+    private final HomeworkRepo homeworkRepo;
 
     @Autowired
-    public HomeworkService(HomeworkRepoTest homeworkRepo) {
+    public HomeworkService(HomeworkRepo homeworkRepo) {
         this.homeworkRepo = homeworkRepo;
     }
 

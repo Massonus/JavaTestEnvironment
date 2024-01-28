@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import org.test.TestTask57.entity.AdditionalMaterial;
 
 @Repository
-public interface AdditionalMaterialRepoTest extends JpaRepository<AdditionalMaterial, Long> {
+public interface AdditionalMaterialRepo extends JpaRepository<AdditionalMaterial, Long> {
 
 
 }

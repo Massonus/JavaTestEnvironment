@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestTask57.entity.AdditionalMaterial;
 import org.test.TestTask57.entity.ResourceType;
-import org.test.TestTask57.repo.AdditionalMaterialRepoTest;
+import org.test.TestTask57.repo.AdditionalMaterialRepo;
 
 import java.util.Comparator;
 import java.util.List;
@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 @Service
 public class AdditionalMaterialService {
 
-    private final AdditionalMaterialRepoTest materialsRepo;
+    private final AdditionalMaterialRepo materialsRepo;
 
     @Autowired
-    public AdditionalMaterialService(AdditionalMaterialRepoTest materialsRepo) {
+    public AdditionalMaterialService(AdditionalMaterialRepo materialsRepo) {
         this.materialsRepo = materialsRepo;
     }
 

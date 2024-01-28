@@ -3,21 +3,21 @@ package org.test.TestTask57.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestTask57.entity.*;
-import org.test.TestTask57.repo.LectureRepoTest;
-import org.test.TestTask57.repo.PersonRepoTest;
+import org.test.TestTask57.repo.LectureRepo;
+import org.test.TestTask57.repo.PersonRepo;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 public class LectureService {
-    private final LectureRepoTest lectureRepo;
+    private final LectureRepo lectureRepo;
     private final AdditionalMaterialService materialsService;
     private final HomeworkService homeworkService;
-    private final PersonRepoTest personRepo;
+    private final PersonRepo personRepo;
 
     @Autowired
-    public LectureService(LectureRepoTest lectureRepo, AdditionalMaterialService materialsService, HomeworkService homeworkService, PersonRepoTest personRepo) {
+    public LectureService(LectureRepo lectureRepo, AdditionalMaterialService materialsService, HomeworkService homeworkService, PersonRepo personRepo) {
         this.lectureRepo = lectureRepo;
         this.materialsService = materialsService;
         this.homeworkService = homeworkService;

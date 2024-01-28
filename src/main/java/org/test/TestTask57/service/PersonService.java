@@ -7,7 +7,7 @@ import org.test.TestTask57.entity.Course;
 import org.test.TestTask57.entity.Lecture;
 import org.test.TestTask57.entity.Person;
 import org.test.TestTask57.entity.Role;
-import org.test.TestTask57.repo.PersonRepoTest;
+import org.test.TestTask57.repo.PersonRepo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +17,12 @@ import java.util.Scanner;
 @Service
 public class PersonService {
 
-    private final PersonRepoTest personRepo;
+    private final PersonRepo personRepo;
 
     private final LectureService lectureService;
 
     @Autowired
-    public PersonService(PersonRepoTest personRepo, LectureService lectureService) {
+    public PersonService(PersonRepo personRepo, LectureService lectureService) {
         this.personRepo = personRepo;
         this.lectureService = lectureService;
     }

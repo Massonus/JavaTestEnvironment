@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import org.test.TestTask57.entity.Course;
 import org.test.TestTask57.entity.Lecture;
 import org.test.TestTask57.entity.Person;
-import org.test.TestTask57.repo.CourseRepoTest;
-import org.test.TestTask57.repo.LectureRepoTest;
+import org.test.TestTask57.repo.CourseRepo;
+import org.test.TestTask57.repo.LectureRepo;
 
 import java.io.*;
 import java.util.*;
@@ -15,12 +15,12 @@ import java.util.stream.Collectors;
 @Service
 public class CourseService {
 
-    private final CourseRepoTest courseRepo;
+    private final CourseRepo courseRepo;
     private final PersonService personService;
-    private final LectureRepoTest lectureRepo;
+    private final LectureRepo lectureRepo;
 
     @Autowired
-    public CourseService(CourseRepoTest courseRepo, PersonService personService, LectureRepoTest lectureRepo) {
+    public CourseService(CourseRepo courseRepo, PersonService personService, LectureRepo lectureRepo) {
         this.courseRepo = courseRepo;
         this.personService = personService;
         this.lectureRepo = lectureRepo;
