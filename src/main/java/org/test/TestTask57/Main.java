@@ -2,10 +2,9 @@ package org.test.TestTask57;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.test.TestTask57.entity.AdditionalMaterial;
 import org.test.TestTask57.entity.Course;
-import org.test.TestTask57.repo.*;
-import org.test.TestTask57.service.*;
+import org.test.TestTask57.service.CourseService;
+import org.test.TestTask57.service.LectureService;
 
 public class Main {
 
