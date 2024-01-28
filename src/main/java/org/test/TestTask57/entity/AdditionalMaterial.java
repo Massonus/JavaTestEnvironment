@@ -11,12 +11,12 @@ import java.util.Objects;
 @Table(name = "additional_material")
 @Data
 @ToString
-public class AdditionalMaterial implements Comparable<AdditionalMaterial>, Serializable {
+public class AdditionalMaterial implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "material_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     private String task;
 
@@ -43,10 +43,5 @@ public class AdditionalMaterial implements Comparable<AdditionalMaterial>, Seria
     @Override
     public int hashCode() {
         return Objects.hash(task);
-    }
-
-    @Override
-    public int compareTo(AdditionalMaterial o) {
-        return this.id - o.getId();
     }
 }

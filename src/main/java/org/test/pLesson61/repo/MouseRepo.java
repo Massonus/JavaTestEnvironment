@@ -11,10 +11,20 @@ import java.util.List;
 
 @Repository
 public interface MouseRepo extends JpaRepository<Mouse, Long> {
+    @Modifying
+    @Transactional
     List<Mouse> findAllByAge(Integer age);
+
+    @Transactional
+    @Modifying
+    boolean deleteMouseById(Long id);
+
+    void deleteMouseByAge(Integer age);
 
     @Modifying
     @Transactional
     @Query("UPDATE Mouse m SET m.name = :#{#updatedMouse.name}, m.value = :#{#updatedMouse.value}, m.age = :#{#updatedMouse.age}, m.mouseType = :#{#updatedMouse.mouseType} WHERE m.id = :#{#updatedMouse.id}")
     void updateMouse(Mouse updatedMouse);
+
+
 }

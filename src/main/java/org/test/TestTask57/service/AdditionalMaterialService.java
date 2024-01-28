@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestTask57.entity.AdditionalMaterial;
 import org.test.TestTask57.entity.ResourceType;
-import org.test.TestTask57.repo.AdditionalMaterialRepo;
+import org.test.TestTask57.repo.AdditionalMaterialRepoTest;
 
 import java.util.Comparator;
 import java.util.List;
@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 @Service
 public class AdditionalMaterialService {
 
-    private final AdditionalMaterialRepo materialsRepo;
+    private final AdditionalMaterialRepoTest materialsRepo;
 
     @Autowired
-    public AdditionalMaterialService(AdditionalMaterialRepo materialsRepo) {
+    public AdditionalMaterialService(AdditionalMaterialRepoTest materialsRepo) {
         this.materialsRepo = materialsRepo;
     }
 
@@ -25,8 +25,8 @@ public class AdditionalMaterialService {
 
     public AdditionalMaterial createElementByUser() {
         material = new AdditionalMaterial();
-        int size = materialsRepo.getMaterialList().size();
-        material.setId(size + 1);
+        long size = materialsRepo.findAll().size();
+        material.setId(size + 1L);
         System.out.println("Enter name of material");
         Scanner scanner1 = new Scanner(System.in);
         String name = scanner1.nextLine();
@@ -50,9 +50,9 @@ public class AdditionalMaterialService {
         return material;
     }
 
-    AdditionalMaterial createElementAuto() {
+    public AdditionalMaterial createElementAuto() {
         material = new AdditionalMaterial();
-        int id = materialsRepo.getMaterialList().size() + 1;
+        long id = materialsRepo.findAll().size() + 1L;
         material.setId(id);
 
         material.setTask("Material " + id);
@@ -66,6 +66,10 @@ public class AdditionalMaterialService {
         }
 
         return material;
+    }
+
+    public void saveMaterial(final AdditionalMaterial material) {
+        materialsRepo.save(material);
     }
 
     public List<AdditionalMaterial> sortMaterialsById(List<AdditionalMaterial> materials) {

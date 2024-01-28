@@ -29,6 +29,8 @@ public class App {
         mouse.setAge(9999);
         mouse.setValue(8888.0);
 
+        mouseService.getMouseList();
+
         /*mouseService.updateMouse(mouse);*/
 
         mouseService.saveMouse(mouse);

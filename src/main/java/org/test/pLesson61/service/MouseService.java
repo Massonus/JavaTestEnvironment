@@ -36,9 +36,9 @@ public class MouseService {
         return mouseRepo.findAllByAge(10);
     }
 
-    public void updateMouse(final Mouse mouse) {
+    /*public void updateMouse(final Mouse mouse) {
         mouseRepo.updateMouse(mouse);
-    }
+    }*/
 
     public void createMousesBeforeStart() {
         final Random random = new Random();

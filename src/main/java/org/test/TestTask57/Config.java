@@ -9,6 +9,7 @@ import org.test.TestTask57.service.*;
 @Configuration
 public class Config {
 
+/*
 
     @Scope("singleton")
     @Bean
@@ -69,5 +70,6 @@ public class Config {
     public HomeworkService homeworkService() {
         return new HomeworkService(homeworkRepo());
     }
+*/
 
 }
