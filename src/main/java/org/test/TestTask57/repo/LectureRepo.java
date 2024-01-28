@@ -17,8 +17,6 @@ import java.util.List;
 @Repository
 public class LectureRepo implements UniversalRepository{
 
-    private Integer id;
-
     public LectureRepo() {
     }
 
@@ -118,7 +116,7 @@ public class LectureRepo implements UniversalRepository{
                 while (resultSet.next()) {
 
                     Lecture lecture = new Lecture();
-                    id = resultSet.getInt("id");
+                    Long id = resultSet.getLong("id");
                     lecture.setId(id);
                     lecture.setSubject(resultSet.getString("subject"));
                     lecture.setLectureDate(resultSet.getDate("lecture_date").toLocalDate());

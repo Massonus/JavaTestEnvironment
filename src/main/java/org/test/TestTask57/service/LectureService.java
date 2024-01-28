@@ -60,8 +60,8 @@ public class LectureService {
 
     public Lecture createElementAuto(final Course course, final Person person) {
         lecture = new Lecture();
-        int size = lectureRepo.getLectureList().size();
-        int id = size + 1;
+        long size = lectureRepo.getLectureList().size();
+        long id = size + 1;
         lecture.setId(id);
 
         if (id < 10 || id > 40) {

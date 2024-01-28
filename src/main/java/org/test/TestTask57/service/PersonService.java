@@ -7,7 +7,7 @@ import org.test.TestTask57.entity.Course;
 import org.test.TestTask57.entity.Lecture;
 import org.test.TestTask57.entity.Person;
 import org.test.TestTask57.entity.Role;
-import org.test.TestTask57.repo.PersonRepo;
+import org.test.TestTask57.repo.PersonRepoTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +17,13 @@ import java.util.Scanner;
 @Service
 public class PersonService {
 
-    private final PersonRepo personRepo = new PersonRepo();
+    private final PersonRepoTest personRepo;
 
     private final LectureService lectureService;
 
     @Autowired
-    public PersonService(LectureService lectureService) {
+    public PersonService(PersonRepoTest personRepo, LectureService lectureService) {
+        this.personRepo = personRepo;
         this.lectureService = lectureService;
     }
 
@@ -31,7 +32,7 @@ public class PersonService {
     public Person createElementAuto(final Course course) {
         person = new Person();
         Random random = new Random();
-        int id = random.nextInt(1, 50);
+        long id = random.nextInt(1, 50);
         person.setId(id);
 
         if (id < 10 || id > 40) {
@@ -54,7 +55,7 @@ public class PersonService {
         person.setEmail(generateRandomString() + "@gmail.com");
 
         person.getCourses().add(course);
-        personRepo.addPerson(person);
+        personRepo.save(person);
         person.setLectures(createAndFillLecturesForPerson(course, person));
 
         return person;
@@ -78,7 +79,7 @@ public class PersonService {
         return materials;
     }
 
-    public Person getById(List<Person> list, int id) {
+    public Person getById(List<Person> list, long id) {
 
         List<Person> collect = list.stream()
                 .filter(p -> p.getId().equals(id))

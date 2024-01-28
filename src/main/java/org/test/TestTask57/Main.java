@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         final ApplicationContext context = new AnnotationConfigApplicationContext(JpaConfig.class);
+        PersonService personService = context.getBean(PersonService.class);
         AdditionalMaterialService materialService = context.getBean(AdditionalMaterialService.class);
         AdditionalMaterial elementAuto = materialService.createElementAuto();
         materialService.saveMaterial(elementAuto);

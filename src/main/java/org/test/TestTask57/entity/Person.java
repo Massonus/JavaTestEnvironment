@@ -17,7 +17,7 @@ public class Person implements Comparable<Person>, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "first_name")
     private String firstName;

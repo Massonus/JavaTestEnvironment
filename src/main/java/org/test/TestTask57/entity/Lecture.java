@@ -20,7 +20,7 @@ public class Lecture implements Comparable<Lecture>, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "lecture_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     private String subject;
 
