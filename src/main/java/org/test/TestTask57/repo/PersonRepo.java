@@ -9,7 +9,6 @@ import org.test.TestTask57.SessionCreator;
 import org.test.TestTask57.entity.Person;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Repository
 public class PersonRepo implements UniversalRepository {
@@ -73,12 +72,5 @@ public class PersonRepo implements UniversalRepository {
         } catch (final Exception e) {
             throw new IllegalStateException(e);
         }
-    }
-
-    public List<Person> getAllTeachers() {
-        List<Person> allPeople = getPeopleList();
-        return allPeople.stream()
-                .filter(a -> a.getRole().toString().equals("TEACHER"))
-                .collect(Collectors.toList());
     }
 }

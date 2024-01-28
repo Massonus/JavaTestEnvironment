@@ -50,6 +50,10 @@ public class HomeworkService {
         return homework;
     }
 
+    public void saveHomework(final Homework homework) {
+        homeworkRepo.save(homework);
+    }
+
     /*public List<Homework> sortHomeworkByLectureId(List<Homework> homeworks) {
         return homeworks.stream()
                 .sorted(Comparator.comparing(Homework::getLectureId))

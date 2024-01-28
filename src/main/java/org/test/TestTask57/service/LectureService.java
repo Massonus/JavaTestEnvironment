@@ -3,10 +3,7 @@ package org.test.TestTask57.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestTask57.entity.*;
-import org.test.TestTask57.repo.AdditionalMaterialRepo;
-import org.test.TestTask57.repo.HomeworkRepo;
-import org.test.TestTask57.repo.LectureRepo;
-import org.test.TestTask57.repo.PersonRepo;
+import org.test.TestTask57.repo.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -15,17 +12,14 @@ import java.util.stream.Collectors;
 public class LectureService {
     private final LectureRepo lectureRepo;
     private final AdditionalMaterialService materialsService;
-    private final AdditionalMaterialRepo materialRepo;
     private final HomeworkService homeworkService;
-    private final HomeworkRepo homeworkRepo;
-    private final PersonRepo personRepo;
+    private final PersonRepoTest personRepo;
 
-    public LectureService(LectureRepo lectureRepo, AdditionalMaterialService materialsService, AdditionalMaterialRepo materialRepo, HomeworkService homeworkService, HomeworkRepo homeworkRepo, PersonRepo personRepo) {
+    @Autowired
+    public LectureService(LectureRepo lectureRepo, AdditionalMaterialService materialsService, HomeworkService homeworkService, PersonRepoTest personRepo) {
         this.lectureRepo = lectureRepo;
         this.materialsService = materialsService;
-        this.materialRepo = materialRepo;
         this.homeworkService = homeworkService;
-        this.homeworkRepo = homeworkRepo;
         this.personRepo = personRepo;
     }
 
@@ -48,7 +42,7 @@ public class LectureService {
         System.out.println("Choose a teacher for Lecture" +
                 "Enter the id");
 
-        List<Person> allPeople = personRepo.getAllTeachers();
+        List<Person> allPeople = getAllTeachers();
 
         Scanner scanner3 = new Scanner(System.in);
         int personId = scanner3.nextInt();
@@ -90,7 +84,7 @@ public class LectureService {
         for (int i = 0; i < lengthMas; i++) {
             AdditionalMaterial elementAuto = materialsService.createElementAuto();
             elementAuto.setLecture(lecture);
-            materialRepo.addMaterial(elementAuto);
+            materialsService.saveMaterial(elementAuto);
             materials.add(elementAuto);
         }
         return materials;
@@ -103,13 +97,13 @@ public class LectureService {
         for (int i = 0; i < lengthMas; i++) {
             Homework elementAuto = homeworkService.createElementAuto();
             elementAuto.setLecture(lecture);
-            homeworkRepo.addHomework(elementAuto);
+            homeworkService.saveHomework(elementAuto);
             homeworkList.add(elementAuto);
         }
         return homeworkList;
     }
 
-    public Lecture getById(List<Lecture> list, int id) {
+    public Lecture getById(List<Lecture> list, long id) {
 
         List<Lecture> collect = list.stream()
                 .filter(l -> l.getId().equals(id))
@@ -136,7 +130,7 @@ public class LectureService {
     }
 
     public List<Person> getAllTeachers() {
-        List<Person> allPeople = personRepo.getPeopleList();
+        List<Person> allPeople = personRepo.findAll();
         return allPeople.stream()
                 .filter(a -> a.getRole().toString().equals("TEACHER"))
                 .collect(Collectors.toList());
