@@ -2,9 +2,11 @@ package org.test.TestTask57.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.test.TestTask57.entity.*;
-import org.test.TestTask57.repo.CourseRepo;
-import org.test.TestTask57.repo.LectureRepo;
+import org.test.TestTask57.entity.Course;
+import org.test.TestTask57.entity.Lecture;
+import org.test.TestTask57.entity.Person;
+import org.test.TestTask57.repo.CourseRepoTest;
+import org.test.TestTask57.repo.LectureRepoTest;
 
 import java.io.*;
 import java.util.*;
@@ -13,12 +15,12 @@ import java.util.stream.Collectors;
 @Service
 public class CourseService {
 
-    private final CourseRepo courseRepo;
+    private final CourseRepoTest courseRepo;
     private final PersonService personService;
-    private final LectureRepo lectureRepo;
+    private final LectureRepoTest lectureRepo;
 
     @Autowired
-    public CourseService(CourseRepo courseRepo, PersonService personService, LectureRepo lectureRepo) {
+    public CourseService(CourseRepoTest courseRepo, PersonService personService, LectureRepoTest lectureRepo) {
         this.courseRepo = courseRepo;
         this.personService = personService;
         this.lectureRepo = lectureRepo;
@@ -28,7 +30,7 @@ public class CourseService {
 
     public Course createElementAuto() {
         course = new Course();
-        int id = courseRepo.getCourseList().size() + 1;
+        long id = courseRepo.findAll().size() + 1;
         course.setId(id);
 
         if (id == 1) {
@@ -43,10 +45,10 @@ public class CourseService {
         if (id == 4) {
             course.setCourseName("Fourth");
         }
-        courseRepo.addCourse(course);
+        courseRepo.save(course);
         course.setPeople(createAndFillPeopleListListForCourse(course));
 
-        List<Lecture> lecturesForCourse = lectureRepo.getLectureList().stream()
+        List<Lecture> lecturesForCourse = lectureRepo.findAll().stream()
                 .filter(l -> l.getId().equals(id))
                 .collect(Collectors.toList());
 

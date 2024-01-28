@@ -17,7 +17,7 @@ public class Course implements Comparable<Course>, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "course_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "course_name")
     private String courseName;

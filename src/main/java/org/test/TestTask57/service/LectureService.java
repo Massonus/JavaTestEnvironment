@@ -3,20 +3,21 @@ package org.test.TestTask57.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestTask57.entity.*;
-import org.test.TestTask57.repo.*;
+import org.test.TestTask57.repo.LectureRepoTest;
+import org.test.TestTask57.repo.PersonRepoTest;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 public class LectureService {
-    private final LectureRepo lectureRepo;
+    private final LectureRepoTest lectureRepo;
     private final AdditionalMaterialService materialsService;
     private final HomeworkService homeworkService;
     private final PersonRepoTest personRepo;
 
     @Autowired
-    public LectureService(LectureRepo lectureRepo, AdditionalMaterialService materialsService, HomeworkService homeworkService, PersonRepoTest personRepo) {
+    public LectureService(LectureRepoTest lectureRepo, AdditionalMaterialService materialsService, HomeworkService homeworkService, PersonRepoTest personRepo) {
         this.lectureRepo = lectureRepo;
         this.materialsService = materialsService;
         this.homeworkService = homeworkService;
@@ -54,7 +55,7 @@ public class LectureService {
 
     public Lecture createElementAuto(final Course course, final Person person) {
         lecture = new Lecture();
-        long size = lectureRepo.getLectureList().size();
+        long size = lectureRepo.findAll().size();
         long id = size + 1;
         lecture.setId(id);
 
@@ -70,7 +71,7 @@ public class LectureService {
         }
         lecture.setCourse(course);
         lecture.setPerson(person);
-        lectureRepo.addLecture(lecture);
+        lectureRepo.save(lecture);
         lecture.setMaterials(createAndFillMaterialsListForLecture(lecture));
         lecture.setHomeworks(createAndFillHomeworkListListForLecture(lecture));
 
