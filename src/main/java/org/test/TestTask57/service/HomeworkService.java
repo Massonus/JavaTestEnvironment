@@ -37,7 +37,6 @@ public class HomeworkService {
         homework = new Homework();
         Random random = new Random();
         long id = random.nextInt(1, 50);
-        homework.setId(id);
 
         if (id < 10 || id > 40) {
             homework.setTask("Doing first and second");

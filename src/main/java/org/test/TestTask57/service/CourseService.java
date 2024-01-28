@@ -31,7 +31,6 @@ public class CourseService {
     public Course createElementAuto() {
         course = new Course();
         long id = courseRepo.findAll().size() + 1;
-        course.setId(id);
 
         if (id == 1) {
             course.setCourseName("First");

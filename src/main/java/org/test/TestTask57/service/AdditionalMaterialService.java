@@ -53,7 +53,6 @@ public class AdditionalMaterialService {
     public AdditionalMaterial createElementAuto() {
         material = new AdditionalMaterial();
         long id = materialsRepo.findAll().size() + 1L;
-        material.setId(id);
 
         material.setTask("Material " + id);
 

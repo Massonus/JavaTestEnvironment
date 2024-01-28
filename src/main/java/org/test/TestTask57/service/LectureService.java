@@ -57,7 +57,6 @@ public class LectureService {
         lecture = new Lecture();
         long size = lectureRepo.findAll().size();
         long id = size + 1;
-        lecture.setId(id);
 
         if (id < 10 || id > 40) {
             lecture.setSubject("Math");

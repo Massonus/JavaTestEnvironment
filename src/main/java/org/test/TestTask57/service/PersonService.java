@@ -33,7 +33,6 @@ public class PersonService {
         person = new Person();
         Random random = new Random();
         long id = random.nextInt(1, 50);
-        person.setId(id);
 
         if (id < 10 || id > 40) {
             person.setFirstName("John");

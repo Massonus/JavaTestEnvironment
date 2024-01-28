@@ -12,19 +12,14 @@ public class Main {
     public static void main(String[] args) {
 
         final ApplicationContext context = new AnnotationConfigApplicationContext(JpaConfig.class);
-        PersonService personService = context.getBean(PersonService.class);
-        AdditionalMaterialService materialService = context.getBean(AdditionalMaterialService.class);
-        AdditionalMaterial elementAuto = materialService.createElementAuto();
-        materialService.saveMaterial(elementAuto);
+        final CourseService courseService = context.getBean(CourseService.class);
+        final LectureService lectureService = context.getBean(LectureService.class);
 
-
-
-        /*for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {
             Course elementAuto = courseService.createElementAuto();
             System.out.println(elementAuto);
         }
 
         lectureService.getAllTeachers().forEach(System.out::println);
-*/
     }
 }
