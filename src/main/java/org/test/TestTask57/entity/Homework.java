@@ -18,7 +18,7 @@ public class Homework implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "homework_id", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "task")
     private String task;

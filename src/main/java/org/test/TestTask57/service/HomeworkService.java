@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestTask57.entity.Homework;
 import org.test.TestTask57.repo.HomeworkRepo;
+import org.test.TestTask57.repo.HomeworkRepoTest;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -11,10 +12,10 @@ import java.util.Scanner;
 @Service
 public class HomeworkService {
 
-    private final HomeworkRepo homeworkRepo;
+    private final HomeworkRepoTest homeworkRepo;
 
     @Autowired
-    public HomeworkService(HomeworkRepo homeworkRepo) {
+    public HomeworkService(HomeworkRepoTest homeworkRepo) {
         this.homeworkRepo = homeworkRepo;
     }
 
@@ -22,7 +23,7 @@ public class HomeworkService {
 
     public Homework createElementByUser() {
         homework = new Homework();
-        int size = homeworkRepo.getHomeworkList().size();
+        long size = homeworkRepo.findAll().size();
         homework.setId(size + 1);
 
         System.out.println("Enter task of homework");
@@ -36,7 +37,7 @@ public class HomeworkService {
     Homework createElementAuto() {
         homework = new Homework();
         Random random = new Random();
-        int id = random.nextInt(1, 50);
+        long id = random.nextInt(1, 50);
         homework.setId(id);
 
         if (id < 10 || id > 40) {

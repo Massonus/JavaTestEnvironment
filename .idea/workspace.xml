@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3c0227b-2f60-41e9-8bc5-70fcb03d2307" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/JpaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/repo/AdditionalMaterialRepoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/entity/AdditionalMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/entity/AdditionalMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/service/AdditionalMaterialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/service/AdditionalMaterialService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/pLesson61/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/pLesson61/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/pLesson61/repo/MouseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/pLesson61/repo/MouseRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/pLesson61/service/MouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/pLesson61/service/MouseService.java" afterDir="false" />
+    <list default="true" id="e3c0227b-2f60-41e9-8bc5-70fcb03d2307" name="Changes" comment="JPA Config works">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/repo/HomeworkRepoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/entity/Homework.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/entity/Homework.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/service/HomeworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/test/TestTask57/service/HomeworkService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +171,7 @@
       <workItem from="1706382559962" duration="1524000" />
       <workItem from="1706384125511" duration="970000" />
       <workItem from="1706386090410" duration="675000" />
-      <workItem from="1706429811594" duration="1594000" />
+      <workItem from="1706429811594" duration="2013000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <option name="closed" value="true" />
@@ -186,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706382193186</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="JPA Config works">
+      <option name="closed" value="true" />
+      <created>1706432007226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706432007226</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +208,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="JPA Config works" />
+    <option name="LAST_COMMIT_MESSAGE" value="JPA Config works" />
   </component>
 </project>
