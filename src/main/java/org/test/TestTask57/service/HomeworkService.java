@@ -22,8 +22,6 @@ public class HomeworkService {
 
     public Homework createElementByUser() {
         homework = new Homework();
-        long size = homeworkRepo.findAll().size();
-        homework.setId(size + 1);
 
         System.out.println("Enter task of homework");
         Scanner scanner2 = new Scanner(System.in);
