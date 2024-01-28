@@ -49,11 +49,11 @@
         <mapping class="org.test.pLesson57.Juice"/>
         <mapping class="org.test.pLesson57.Manufacturer"/>
         <mapping class="org.test.pLesson57.Orange"/>
-        <mapping class="org.test.TestTask57.entity.AdditionalMaterial"/>
-        <mapping class="org.test.TestTask57.entity.Lecture"/>
-        <mapping class="org.test.TestTask57.entity.Homework"/>
-        <mapping class="org.test.TestTask57.entity.Person"/>
-        <mapping class="org.test.TestTask57.entity.Course"/>
+        <mapping class="org.test.TestOnlineSchoolJPA.entity.AdditionalMaterial"/>
+        <mapping class="org.test.TestOnlineSchoolJPA.entity.Lecture"/>
+        <mapping class="org.test.TestOnlineSchoolJPA.entity.Homework"/>
+        <mapping class="org.test.TestOnlineSchoolJPA.entity.Person"/>
+        <mapping class="org.test.TestOnlineSchoolJPA.entity.Course"/>
         <mapping class="org.test.pLesson59.entity.MicroPhone"/>
 
     </session-factory>
