@@ -28,7 +28,7 @@ public class PersonService {
 
     Person person;
 
-    public Person createElementByUser(final String firstName, final String lastName, final String phone, final String email, Role role, final List<Integer> lectureIdList, final List<Integer> courseIdList) {
+    public Person createElementByUserForm(final String firstName, final String lastName, final String phone, final String email, Role role, final List<Integer> lectureIdList, final List<Integer> courseIdList) {
         person = new Person();
 
         person.setFirstName(firstName);

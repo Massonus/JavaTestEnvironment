@@ -29,7 +29,7 @@ public class LectureService {
 
     private Lecture lecture;
 
-    public Lecture createElementByUser(final String name, final String description, final Long courseId, final Long personId) {
+    public Lecture createElementByUserForm(final String name, final String description, final Long courseId, final Long personId) {
 
         lecture = new Lecture();
         lecture.setSubject(name);

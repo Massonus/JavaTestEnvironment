@@ -41,7 +41,7 @@ public class HomeworkController {
     @PostMapping("/addHomework")
     public String addMaterial(@RequestParam String task,
                               @RequestParam Long lectureId) {
-        final Homework newHomework = homeworkService.createElementByUser(task, lectureId);
+        final Homework newHomework = homeworkService.createElementByUserForm(task, lectureId);
         homeworkService.saveHomework(newHomework);
         return "redirect:/all-homework";
     }

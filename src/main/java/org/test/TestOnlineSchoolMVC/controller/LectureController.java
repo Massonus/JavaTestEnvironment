@@ -43,7 +43,7 @@ public class LectureController {
                               @RequestParam Long teacherId,
                               @RequestParam Long courseId) {
 
-        final Lecture newLecture = lectureService.createElementByUser(subject, description, teacherId, courseId);
+        final Lecture newLecture = lectureService.createElementByUserForm(subject, description, teacherId, courseId);
         lectureService.saveLecture(newLecture);
         return "redirect:/all-lectures";
     }

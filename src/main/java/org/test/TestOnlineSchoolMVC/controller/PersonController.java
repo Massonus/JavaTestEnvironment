@@ -58,7 +58,7 @@ public class PersonController {
                               @RequestParam List<Integer> lectureIdList,
                               @RequestParam List<Integer> courseIdList) {
 
-        final Person newPerson = personService.createElementByUser(firstName, lastName, phone, email, Role.valueOf(role), lectureIdList, courseIdList);
+        final Person newPerson = personService.createElementByUserForm(firstName, lastName, phone, email, Role.valueOf(role), lectureIdList, courseIdList);
         personService.savePerson(newPerson);
         return "redirect:/all-people";
     }

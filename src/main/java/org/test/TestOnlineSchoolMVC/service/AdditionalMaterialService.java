@@ -27,7 +27,7 @@ public class AdditionalMaterialService {
 
     AdditionalMaterial material;
 
-    public AdditionalMaterial createElementByUser(String task, ResourceType resourceType, Long lectureId) {
+    public AdditionalMaterial createElementByUserForm(String task, ResourceType resourceType, Long lectureId) {
         material = new AdditionalMaterial();
 
         material.setTask(task);

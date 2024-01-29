@@ -25,7 +25,7 @@ public class HomeworkService {
 
     Homework homework;
 
-    public Homework createElementByUser(final String task, final Long lectureId) {
+    public Homework createElementByUserForm(final String task, final Long lectureId) {
         homework = new Homework();
 
         homework.setTask(task);

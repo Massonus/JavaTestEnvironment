@@ -45,7 +45,7 @@ public class AdditionalMaterialController {
                               @RequestParam String type,
                               @RequestParam Long lectureId) {
         ResourceType resourceType = ResourceType.valueOf(type);
-        final AdditionalMaterial newMaterial = materialService.createElementByUser(task, resourceType, lectureId);
+        final AdditionalMaterial newMaterial = materialService.createElementByUserForm(task, resourceType, lectureId);
         materialService.saveMaterial(newMaterial);
         return "redirect:/all-materials";
     }
