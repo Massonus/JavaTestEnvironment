@@ -1,4 +1,4 @@
-package org.test.TestOnlineSchoolMVC;
+package org.test.TestOnlineSchoolMVC.config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
