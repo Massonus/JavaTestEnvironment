@@ -6,6 +6,4 @@ import org.test.TestOnlineSchoolMVC.entity.AdditionalMaterial;
 
 @Repository
 public interface AdditionalMaterialRepo extends JpaRepository<AdditionalMaterial, Long> {
-
-
 }

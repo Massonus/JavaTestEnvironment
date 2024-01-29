@@ -15,8 +15,8 @@
     <div class="nav">
         <br>
         <#list menu as menuItem>
-        <a href="${menuItem.link}">${menuItem.label}</a>
-    </#list>
+            <a href="${menuItem.link}">${menuItem.label}</a>
+        </#list>
     </div>
 </nav>
 <h2>Select the button</h2>
@@ -34,36 +34,36 @@
     </thead>
     <tbody>
     <#list lectures as lecture>
-    <tr>
-        <td>${lecture.id!""}</td>
-        <td>
-            <li><a href="/Test_war_exploded/lecture/${lecture.id!""}">${lecture.subject!""}</a></li>
-        </td>
-        <td>${lecture.description!""}</td>
-        <td>${lecture.lectureDate!""}</td>
-        <td>${lecture.course.getId()!""}</td>
-        <td>${lecture.person.getId()!""}</td>
-    </tr>
+        <tr>
+            <td>${lecture.id!""}</td>
+            <td>
+                <li><a href="/Test_war_exploded/lecture/${lecture.id!""}">${lecture.subject!""}</a></li>
+            </td>
+            <td>${lecture.description!""}</td>
+            <td>${lecture.lectureDate!""}</td>
+            <td>${lecture.course.getId()!""}</td>
+            <td>${lecture.person.getId()!""}</td>
+        </tr>
     </#list>
     </tbody>
 </table>
 
-    <h2>Add Person</h2>
-    <form method="post" action="/Test_war_exploded/addLecture">
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required><br><br>
+<h2>Add Person</h2>
+<form method="post" action="/Test_war_exploded/addLecture">
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required><br><br>
 
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" required><br><br>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" required><br><br>
 
-        <label for="teacher_id">Teacher id:</label>
-        <input type="number" id="teacher_id" name="teacherId" required><br><br>
+    <label for="teacher_id">Teacher id:</label>
+    <input type="number" id="teacher_id" name="teacherId" required><br><br>
 
-        <label for="course_id">Course id:</label>
-        <input type="number" id="course_id" name="courseId" required><br><br>
+    <label for="course_id">Course id:</label>
+    <input type="number" id="course_id" name="courseId" required><br><br>
 
-        <input type="submit" value="Send">
-    </form>
+    <input type="submit" value="Send">
+</form>
 
 </body>
 </html>

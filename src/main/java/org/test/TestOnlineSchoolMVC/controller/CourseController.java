@@ -6,12 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.test.TestOnlineSchoolMVC.entity.Course;
-import org.test.TestOnlineSchoolMVC.entity.Lecture;
 import org.test.TestOnlineSchoolMVC.service.CourseService;
-import org.test.TestOnlineSchoolMVC.service.LectureService;
 import org.test.TestOnlineSchoolMVC.service.Menu;
-
-import java.util.Optional;
 
 @Controller
 public class CourseController {

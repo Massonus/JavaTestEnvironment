@@ -24,6 +24,7 @@ nav {
     flex-direction: row;
     margin-bottom: 25px;
 }
+
 .choose-lectures {
     display: flex;
     text-align: center;
@@ -107,5 +108,5 @@ label {
 }
 
 td {
-    list-style-type:  none;
+    list-style-type: none;
 }
