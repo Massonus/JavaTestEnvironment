@@ -3,49 +3,37 @@ package org.test.TestOnlineSchoolMVC.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestOnlineSchoolMVC.entity.AdditionalMaterial;
+import org.test.TestOnlineSchoolMVC.entity.Lecture;
 import org.test.TestOnlineSchoolMVC.entity.ResourceType;
 import org.test.TestOnlineSchoolMVC.repo.AdditionalMaterialRepo;
+import org.test.TestOnlineSchoolMVC.repo.LectureRepo;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class AdditionalMaterialService {
 
     private final AdditionalMaterialRepo materialsRepo;
+    private final LectureRepo lectureRepo;
 
     @Autowired
-    public AdditionalMaterialService(AdditionalMaterialRepo materialsRepo) {
+    public AdditionalMaterialService(AdditionalMaterialRepo materialsRepo, LectureRepo lectureRepo) {
         this.materialsRepo = materialsRepo;
+        this.lectureRepo = lectureRepo;
     }
 
     AdditionalMaterial material;
 
-    public AdditionalMaterial createElementByUser() {
+    public AdditionalMaterial createElementByUser(String task, ResourceType resourceType, Long lectureId) {
         material = new AdditionalMaterial();
-        long size = materialsRepo.findAll().size();
-        material.setId(size + 1L);
-        System.out.println("Enter name of material");
-        Scanner scanner1 = new Scanner(System.in);
-        String name = scanner1.nextLine();
-        material.setTask(name);
 
-        System.out.println("1. To select the resourceType URL");
-        System.out.println("2. To select the resourceType VIDEO");
-        System.out.println("3. To select the resourceType BOOK");
-        Scanner scanner2 = new Scanner(System.in);
-        int resourceType = scanner2.nextInt();
-        if (resourceType == 1) {
-            material.setResourceType(ResourceType.URL);
-        } else if (resourceType == 2) {
-            material.setResourceType(ResourceType.VIDEO);
-        } else if (resourceType == 3) {
-            material.setResourceType(ResourceType.BOOK);
-        } else {
-            System.out.println("Incorrect");
-        }
+        material.setTask(task);
+        material.setResourceType(resourceType);
+        Lecture lectureById = lectureRepo.findById(lectureId).get();
+        material.setLecture(lectureById);
 
         return material;
     }
@@ -69,6 +57,18 @@ public class AdditionalMaterialService {
 
     public void saveMaterial(final AdditionalMaterial material) {
         materialsRepo.save(material);
+    }
+
+    public List<AdditionalMaterial> getMaterialList() {
+        return materialsRepo.findAll();
+    }
+
+    public Optional<AdditionalMaterial> getMaterialById(final long id) {
+        return materialsRepo.findById(id);
+    }
+
+    public void deleteMaterial(final long id) {
+        materialsRepo.deleteById(id);
     }
 
     public List<AdditionalMaterial> sortMaterialsById(List<AdditionalMaterial> materials) {

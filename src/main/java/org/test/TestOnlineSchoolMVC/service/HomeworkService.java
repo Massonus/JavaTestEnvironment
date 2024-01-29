@@ -3,30 +3,34 @@ package org.test.TestOnlineSchoolMVC.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestOnlineSchoolMVC.entity.Homework;
+import org.test.TestOnlineSchoolMVC.entity.Lecture;
 import org.test.TestOnlineSchoolMVC.repo.HomeworkRepo;
+import org.test.TestOnlineSchoolMVC.repo.LectureRepo;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.Random;
-import java.util.Scanner;
 
 @Service
 public class HomeworkService {
 
     private final HomeworkRepo homeworkRepo;
+    private final LectureRepo lectureRepo;
 
     @Autowired
-    public HomeworkService(HomeworkRepo homeworkRepo) {
+    public HomeworkService(HomeworkRepo homeworkRepo, LectureRepo lectureRepo) {
         this.homeworkRepo = homeworkRepo;
+        this.lectureRepo = lectureRepo;
     }
 
     Homework homework;
 
-    public Homework createElementByUser() {
+    public Homework createElementByUser(final String task, final Long lectureId) {
         homework = new Homework();
 
-        System.out.println("Enter task of homework");
-        Scanner scanner2 = new Scanner(System.in);
-        String task = scanner2.nextLine();
         homework.setTask(task);
+        Lecture lectureById = lectureRepo.findById(lectureId).get();
+        homework.setLecture(lectureById);
 
         return homework;
     }
@@ -48,6 +52,18 @@ public class HomeworkService {
 
     public void saveHomework(final Homework homework) {
         homeworkRepo.save(homework);
+    }
+
+    public List<Homework> getHomeworkList() {
+        return homeworkRepo.findAll();
+    }
+
+    public Optional<Homework> getHomeworkById(final long id) {
+        return homeworkRepo.findById(id);
+    }
+
+    public void deleteHomework(final long id) {
+        homeworkRepo.deleteById(id);
     }
 
     /*public List<Homework> sortHomeworkByLectureId(List<Homework> homeworks) {

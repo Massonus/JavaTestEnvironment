@@ -80,7 +80,7 @@ public class LectureService {
     public List<AdditionalMaterial> createAndFillMaterialsListForLecture(final Lecture lecture) {
         List<AdditionalMaterial> materials = new ArrayList<>();
         Random random = new Random();
-        int lengthMas = random.nextInt(1, 10);
+        int lengthMas = random.nextInt(1, 5);
         for (int i = 0; i < lengthMas; i++) {
             AdditionalMaterial elementAuto = materialsService.createElementAuto();
             elementAuto.setLecture(lecture);
@@ -93,7 +93,7 @@ public class LectureService {
     public List<Homework> createAndFillHomeworkListListForLecture(final Lecture lecture) {
         List<Homework> homeworkList = new ArrayList<>();
         Random random = new Random();
-        int lengthMas = random.nextInt(1, 10);
+        int lengthMas = random.nextInt(1, 5);
         for (int i = 0; i < lengthMas; i++) {
             Homework elementAuto = homeworkService.createElementAuto();
             elementAuto.setLecture(lecture);

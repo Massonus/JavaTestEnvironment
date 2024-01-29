@@ -59,7 +59,7 @@ public class CourseService {
     public List<Person> createAndFillPeopleListListForCourse(final Course course) {
         List<Person> materials = new ArrayList<>();
         Random random = new Random();
-        int lengthMas = random.nextInt(1, 9);
+        int lengthMas = random.nextInt(1, 5);
         for (int i = 0; i < lengthMas; i++) {
             Person elementAuto = personService.createElementAuto(course);
             materials.add(elementAuto);

@@ -1,49 +1,24 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Student List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="templates/styles.css" rel="stylesheet">
+    <title>Main menu</title>
 </head>
 <body>
+<h1>${message}</h1>
+<br>
+<nav>
+    <div class="nav">
+        <br>
+        <#list menu as menuItem>
+            <a href="${menuItem.link}">${menuItem.label}</a>
+        </#list>
+    </div>
+</nav>
 
-<ul>
-    <#list menu as menuItem>
-        <li><a href="${menuItem.link}">${menuItem.label}</a></li>
-    </#list>
-</ul>
-
-<h1>Student List</h1>
-
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Email</th>
-    </tr>
-    </thead>
-    <tbody>
-    <#list students as student>
-        <tr>
-            <td>${student.id!""}</td>
-            <td>${student.type!""}</td>
-            <td><li><a href="/Test_war_exploded/student/${student.id!""}">${student.name!""}</a></li></td>
-            <td>${student.email!""}</td>
-        </tr>
-    </#list>
-    </tbody>
-</table>
-
-
-<h2>Add Student</h2>
-<form method="post" action="/Test_war_exploded/add">
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name"><br>
-    <label for="type">Type:</label>
-    <input type="text" name="type" id="type"><br>
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email"><br>
-    <input type="submit" value="Add">
-</form>
 </body>
 </html>

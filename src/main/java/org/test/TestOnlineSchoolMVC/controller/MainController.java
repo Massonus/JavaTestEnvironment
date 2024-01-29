@@ -1,0 +1,45 @@
+package org.test.TestOnlineSchoolMVC.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.test.TestOnlineSchoolMVC.service.CourseService;
+import org.test.TestOnlineSchoolMVC.service.Menu;
+
+import java.io.InputStream;
+@Controller
+public class MainController {
+    private final CourseService courseService;
+    private final Menu menu;
+
+    @Autowired
+    public MainController(CourseService courseService, Menu menu) {
+        this.courseService = courseService;
+        this.menu = menu;
+    }
+
+    @GetMapping(value = "/templates/{cssFile}")
+    public @ResponseBody byte[] getFile(@PathVariable("cssFile") String cssFile) {
+
+        InputStream in = getClass()
+                .getResourceAsStream("/templates/" + cssFile);
+        try {
+            return in.readAllBytes();
+
+        } catch (Exception e) {
+            String error = "ERROR: css file (/templates/" + cssFile + ") not found";
+            return error.getBytes();
+        }
+    }
+
+    @GetMapping("/")
+    public String start(Model model) {
+        courseService.createElementAuto();
+        model.addAttribute("message", "Main menu");
+        model.addAttribute("menu", menu.getMenuItems());
+        return "index";
+    }
+}
