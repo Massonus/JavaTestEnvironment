@@ -3,6 +3,7 @@ package org.test.TestOnlineSchoolMVC.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.TestOnlineSchoolMVC.entity.*;
+import org.test.TestOnlineSchoolMVC.repo.CourseRepo;
 import org.test.TestOnlineSchoolMVC.repo.LectureRepo;
 import org.test.TestOnlineSchoolMVC.repo.PersonRepo;
 
@@ -15,40 +16,31 @@ public class LectureService {
     private final AdditionalMaterialService materialsService;
     private final HomeworkService homeworkService;
     private final PersonRepo personRepo;
+    private final CourseRepo courseRepo;
 
     @Autowired
-    public LectureService(LectureRepo lectureRepo, AdditionalMaterialService materialsService, HomeworkService homeworkService, PersonRepo personRepo) {
+    public LectureService(LectureRepo lectureRepo, AdditionalMaterialService materialsService, HomeworkService homeworkService, PersonRepo personRepo, CourseRepo courseRepo) {
         this.lectureRepo = lectureRepo;
         this.materialsService = materialsService;
         this.homeworkService = homeworkService;
         this.personRepo = personRepo;
+        this.courseRepo = courseRepo;
     }
 
     private Lecture lecture;
 
-    public Lecture createElementByUser() {
+    public Lecture createElementByUser(final String name, final String description, final Long courseId, final Long personId) {
 
         lecture = new Lecture();
-        System.out.println("Now create the Lecture");
-        System.out.println("Enter name of lecture");
-        Scanner scanner1 = new Scanner(System.in);
-        String name = scanner1.nextLine();
         lecture.setSubject(name);
 
-        System.out.println("Enter description of lecture");
-        Scanner scanner2 = new Scanner(System.in);
-        String description = scanner2.nextLine();
         lecture.setDescription(description);
 
-        System.out.println("Choose a teacher for Lecture" +
-                "Enter the id");
+        Course courseById = courseRepo.getById(courseId);
+        lecture.setCourse(courseById);
 
-        List<Person> allPeople = getAllTeachers();
-
-        Scanner scanner3 = new Scanner(System.in);
-        int personId = scanner3.nextInt();
-        /*Person personForLecture = personService.getById(allPeople, personId);*/
-        /*lecture.setPerson(personForLecture);*/
+        Person personForLecture = personRepo.findById(personId).orElse(null);
+        lecture.setPerson(personForLecture);
 
         return lecture;
     }
@@ -75,6 +67,22 @@ public class LectureService {
         lecture.setHomeworks(createAndFillHomeworkListListForLecture(lecture));
 
         return lecture;
+    }
+
+    public void saveLecture(final Lecture lecture) {
+        lectureRepo.save(lecture);
+    }
+
+    public List<Lecture> getLectureList() {
+        return lectureRepo.findAll();
+    }
+
+    public Optional<Lecture> getLectureById(final long id) {
+        return lectureRepo.findById(id);
+    }
+
+    public void deleteLecture(final long id) {
+        lectureRepo.deleteById(id);
     }
 
     public List<AdditionalMaterial> createAndFillMaterialsListForLecture(final Lecture lecture) {

@@ -22,6 +22,7 @@ public class HomeworkController {
         this.menu = menu;
         this.homeworkService = homeworkService;
     }
+
     @GetMapping("/homework/{id}")
     public String getStudent(Model model, @PathVariable long id) {
         final Homework homework = homeworkService.getHomeworkById(id).orElse(null);

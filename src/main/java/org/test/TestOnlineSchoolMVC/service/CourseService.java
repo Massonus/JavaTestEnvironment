@@ -56,6 +56,18 @@ public class CourseService {
         return course;
     }
 
+    public void saveCourse(final Course course) {
+        courseRepo.save(course);
+    }
+
+    public List<Course> getCourseList() {
+        return courseRepo.findAll();
+    }
+
+    public Optional<Course> getCourseById(final long id) {
+        return courseRepo.findById(id);
+    }
+
     public List<Person> createAndFillPeopleListListForCourse(final Course course) {
         List<Person> materials = new ArrayList<>();
         Random random = new Random();

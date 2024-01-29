@@ -10,15 +10,18 @@ import org.test.TestOnlineSchoolMVC.service.CourseService;
 import org.test.TestOnlineSchoolMVC.service.Menu;
 
 import java.io.InputStream;
+
 @Controller
 public class MainController {
-    private final CourseService courseService;
     private final Menu menu;
 
     @Autowired
     public MainController(CourseService courseService, Menu menu) {
-        this.courseService = courseService;
         this.menu = menu;
+
+        for (int i = 0; i < 4; i++) {
+            courseService.createElementAuto();
+        }
     }
 
     @GetMapping(value = "/templates/{cssFile}")
@@ -37,7 +40,6 @@ public class MainController {
 
     @GetMapping("/")
     public String start(Model model) {
-        courseService.createElementAuto();
         model.addAttribute("message", "Main menu");
         model.addAttribute("menu", menu.getMenuItems());
         return "index";

@@ -29,7 +29,7 @@ public class HomeworkService {
         homework = new Homework();
 
         homework.setTask(task);
-        Lecture lectureById = lectureRepo.findById(lectureId).get();
+        Lecture lectureById = lectureRepo.findById(lectureId).orElse(null);
         homework.setLecture(lectureById);
 
         return homework;

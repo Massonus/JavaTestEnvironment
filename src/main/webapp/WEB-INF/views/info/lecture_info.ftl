@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="templates/styles.css" rel="stylesheet">
-    <title>Person info</title>
+    <title>Lecture info</title>
 </head>
 <body>
 <br>
@@ -19,8 +19,8 @@
     </div>
 </nav>
 
-<h1>Hello ${person.getId()!""}</h1>
-<p> ${person}
+<h1>Hello ${lecture.getId()!""}</h1>
+<p> ${lecture}
 
 </body>
 </html>

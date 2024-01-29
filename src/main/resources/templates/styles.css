@@ -24,6 +24,17 @@ nav {
     flex-direction: row;
     margin-bottom: 25px;
 }
+.choose-lectures {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+}
+
+.choose-courses {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+}
 
 .nav {
     display: flex;

@@ -7,22 +7,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.test.TestOnlineSchoolMVC.entity.Homework;
 import org.test.TestOnlineSchoolMVC.entity.Person;
-import org.test.TestOnlineSchoolMVC.service.HomeworkService;
+import org.test.TestOnlineSchoolMVC.entity.Role;
+import org.test.TestOnlineSchoolMVC.service.CourseService;
+import org.test.TestOnlineSchoolMVC.service.LectureService;
 import org.test.TestOnlineSchoolMVC.service.Menu;
 import org.test.TestOnlineSchoolMVC.service.PersonService;
+
+import java.util.List;
 
 @Controller
 public class PersonController {
 
     private final Menu menu;
     private final PersonService personService;
+    private final LectureService lectureService;
+    private final CourseService courseService;
 
     @Autowired
-    public PersonController(Menu menu, PersonService personService) {
+    public PersonController(Menu menu, PersonService personService, LectureService lectureService, CourseService courseService) {
         this.menu = menu;
         this.personService = personService;
+        this.lectureService = lectureService;
+        this.courseService = courseService;
     }
 
     @GetMapping("/person/{id}")
@@ -37,14 +44,22 @@ public class PersonController {
     public String home(Model model) {
         model.addAttribute("menu", menu.getMenuItems());
         model.addAttribute("people", personService.getPeopleList());
+        model.addAttribute("lectures", lectureService.getLectureList());
+        model.addAttribute("courses", courseService.getCourseList());
         return "menu/person_menu";
     }
 
-    /*@PostMapping("/addPerson")
-    public String addMaterial(@RequestParam String task,
-                              @RequestParam Long lectureId) {
-        final Homework newHomework = homeworkService.createElementByUser(task, lectureId);
-        homeworkService.saveHomework(newHomework);
-        return "redirect:/all-homework";
-    }*/
+    @PostMapping("/addPerson")
+    public String addMaterial(@RequestParam String firstName,
+                              @RequestParam String lastName,
+                              @RequestParam String phone,
+                              @RequestParam String email,
+                              @RequestParam String role,
+                              @RequestParam List<Integer> lectureIdList,
+                              @RequestParam List<Integer> courseIdList) {
+
+        final Person newPerson = personService.createElementByUser(firstName, lastName, phone, email, Role.valueOf(role), lectureIdList, courseIdList);
+        personService.savePerson(newPerson);
+        return "redirect:/all-people";
+    }
 }

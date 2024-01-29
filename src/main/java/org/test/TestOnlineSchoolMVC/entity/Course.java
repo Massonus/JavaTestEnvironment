@@ -22,7 +22,7 @@ public class Course implements Comparable<Course>, Serializable {
     @Column(name = "course_name")
     private String courseName;
 
-    @ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "courses", fetch = FetchType.EAGER)
     private List<Person> people = new ArrayList<>();
 
     @OneToMany(mappedBy = "course",

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = MaterialNotFoundException.class)
-    public ResponseEntity categoryNotFoundException(MaterialNotFoundException e) {
+    public ResponseEntity materialNotFoundException(MaterialNotFoundException e) {
         return new ResponseEntity(e.getMessage(), HttpStatus.NOT_FOUND);
     }
 

@@ -9,7 +9,7 @@
     <title>Person List</title>
 </head>
 <body>
-<h1>Additional Material List</h1>
+<h1>People List</h1>
 <br>
 <nav>
     <div class="nav">
@@ -49,12 +49,12 @@
 </table>
 
     <h2>Add Person</h2>
-    <form method="post" action="/Test_war_exploded/addMaterial">
+    <form method="post" action="/Test_war_exploded/addPerson">
         <label for="first_name">First name:</label>
-        <input type="text" id="first_name" name="first_name" required><br><br>
+        <input type="text" id="first_name" name="firstName" required><br><br>
 
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" required><br><br>
+        <label for="last_name">Last name:</label>
+        <input type="text" id="last_name" name="lastName" required><br><br>
 
         <label for="phone">Phone:</label>
         <input type="text" id="phone" name="phone" required><br><br>
@@ -67,8 +67,23 @@
             <input type="radio" name="role" value="TEACHER">TEACHER
         </label><br><br>
 
-        <label for="course_id">Course id:</label>
-        <input type="number" id="course_id" name="course_id" required><br><br>
+        <div class="choose-lectures">
+        <#list lectures as lecture>
+            <label>Lecture:
+                <input type="checkbox" name="lectureIdList" value=${lecture.id!""}> id: ${lecture.id!""}
+            </label><br>
+        </#list>
+        </div>
+        <br><br>
+
+        <div class="choose-courses">
+            <#list courses as course>
+                <label>Course:
+                    <input type="checkbox" name="courseIdList" value=${course.id!""}> id: ${course.id!""}
+                </label><br>
+            </#list>
+        </div>
+        <br>
 
         <input type="submit" value="Send">
     </form>

@@ -32,7 +32,7 @@ public class AdditionalMaterialService {
 
         material.setTask(task);
         material.setResourceType(resourceType);
-        Lecture lectureById = lectureRepo.findById(lectureId).get();
+        Lecture lectureById = lectureRepo.findById(lectureId).orElse(null);
         material.setLecture(lectureById);
 
         return material;

@@ -17,6 +17,7 @@ public class Menu {
         menuItems.add(new MenuItem("/Test_war_exploded/", "Main"));
         menuItems.add(new MenuItem("/Test_war_exploded/all-materials", "All materials"));
         menuItems.add(new MenuItem("/Test_war_exploded/all-homework", "All homework"));
+        menuItems.add(new MenuItem("/Test_war_exploded/all-lectures", "All Lectures"));
         menuItems.add(new MenuItem("/Test_war_exploded/all-people", "All people"));
     }
 
