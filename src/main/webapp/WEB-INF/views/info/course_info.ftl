@@ -19,8 +19,8 @@
     </div>
 </nav>
 
-<h1>Hello ${homework.getTask()!""}</h1>
-<p> ${homework}
+<h1>Hello ${course.courseName!""}</h1>
+<p> ${course}
 
 </body>
 </html>

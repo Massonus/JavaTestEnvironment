@@ -25,33 +25,19 @@
     <thead>
     <tr>
         <th>Id</th>
-        <th>Task</th>
-        <th>Deadline</th>
+        <th>Name</th>
     </tr>
     </thead>
     <tbody>
-    <#list homeworks as homework>
+    <#list courses as course>
         <tr>
-            <td>${homework.id!""}</td>
+            <td>${course.id!""}</td>
             <td>
-                <li><a href="/Test_war_exploded/homework/${homework.id!""}">${homework.task!""}</a></li>
+                <li><a href="/Test_war_exploded/course/${course.id!""}">${course.courseName!""}</a></li>
             </td>
-            <td>${homework.deadline!""}</td>
         </tr>
     </#list>
     </tbody>
 </table>
-
-
-<h2>Add Homework</h2>
-<form method="post" action="/Test_war_exploded/addHomework">
-    <label for="task">Task:</label>
-    <input type="text" id="task" name="task" required><br><br>
-
-    <label for="lecture_id">Lecture id:</label>
-    <input type="number" id="lecture_id" name="lectureId" required><br><br>
-
-    <input type="submit" value="Send">
-</form>
 </body>
 </html>
