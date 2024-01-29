@@ -27,6 +27,7 @@
         <th>Id</th>
         <th>Task</th>
         <th>Deadline</th>
+        <th>Lecture id</th>
     </tr>
     </thead>
     <tbody>
@@ -37,6 +38,7 @@
                 <li><a href="/Test_war_exploded/homework/${homework.id!""}">${homework.task!""}</a></li>
             </td>
             <td>${homework.deadline!""}</td>
+            <td>${homework.lecture.getId()!""}</td>
         </tr>
     </#list>
     </tbody>
