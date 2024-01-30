@@ -37,7 +37,7 @@
             <td>
                 <li><a href="/Test_war_exploded/homework/${homework.id!""}">${homework.task!""}</a></li>
             </td>
-            <td>${homework.deadline!""}</td>
+            <td>${homework.formattedLocalDate!""}</td>
             <td>${homework.lecture.getId()!""}</td>
         </tr>
     </#list>

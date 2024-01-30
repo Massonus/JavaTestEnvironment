@@ -40,7 +40,7 @@
                 <li><a href="/Test_war_exploded/lecture/${lecture.id!""}">${lecture.subject!""}</a></li>
             </td>
             <td>${lecture.description!""}</td>
-            <td>${lecture.lectureDate!""}</td>
+            <td>${lecture.lectureDateSql!""}</td>
             <td>${lecture.course.getId()!""}</td>
             <td>${lecture.person.getId()!""}</td>
         </tr>

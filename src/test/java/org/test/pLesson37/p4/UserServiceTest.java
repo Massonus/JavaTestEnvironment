@@ -1,8 +1,8 @@
 package org.test.pLesson37.p4;
 
-import org.test.pLesson37.User;
-import org.test.pLesson37.UserRepository;
-import org.test.pLesson37.UserService;
+import com.test.pLesson37.User;
+import com.test.pLesson37.UserRepository;
+import com.test.pLesson37.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
