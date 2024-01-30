@@ -48,7 +48,6 @@ public class Homework implements Serializable {
             localDateDeadline = LocalDate.of(LocalDate.now().getYear(), LocalDate.now().getMonthValue() + 1, 2);
         }
         formatterDeadline = DateTimeFormatter.ofPattern("MMM d, EEEE");
-
         deadline = Date.valueOf(localDateDeadline);
         formattedLocalDate = localDateDeadline.format(formatterDeadline);
     }

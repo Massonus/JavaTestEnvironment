@@ -6,6 +6,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
@@ -38,7 +39,11 @@ public class Homework implements Serializable {
     private Date deadline;
 
     public Homework() {
-        localDateDeadline = LocalDate.of(LocalDate.now().getYear(), LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth() + 2);
+        try {
+            localDateDeadline = LocalDate.of(LocalDate.now().getYear(), LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth() + 2);
+        } catch (DateTimeException e) {
+            localDateDeadline = LocalDate.of(LocalDate.now().getYear(), LocalDate.now().getMonthValue() + 1, 2);
+        }
         formatterDeadline = DateTimeFormatter.ofPattern("MMM d, EEEE");
         deadline = Date.valueOf(localDateDeadline);
     }

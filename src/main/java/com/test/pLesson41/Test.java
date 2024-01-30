@@ -10,10 +10,10 @@ public class Test {
     public static void main(String[] args) {
 
         try {
-//            LaptopRepository.createLaptop();
-            /*final int i = LaptopRepository.insertValue(1, "'Name'", true, "'Description'");
+            LaptopRepository.createLaptop();
+            final int i = LaptopRepository.insertValue(1, "'Name'", true, "'Description'");
             final int i1 = LaptopRepository.insertValue(2, "'Name1'", true, "'Description1'");
-            final int i2 = LaptopRepository.insertValue(3, "'Name1'", true, "'Description1'");*/
+            final int i2 = LaptopRepository.insertValue(3, "'Name1'", true, "'Description1'");
 
             Laptop laptop = new Laptop(11, "Prepare", true, "New");
 
