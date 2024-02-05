@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wxample</title>
+    <script>
+        function calculate() {
+            var operand1 = parseFloat(document.getElementById("operand1").value);
+            var operand2 = parseFloat(document.getElementById("operand2").value);
+            var operator = document.getElementById("operator").value;
+            var result = 0;
+
+            if (operator == "+") {
+                result = operand1 + operand2;
+            } else if (operator == "-") {
+                result = operand1 - operand2;
+            } else if (operator == "*") {
+                result = operand1 * operand2;
+            } else if (operator == "/") {
+                result = operand1 / operand2;
+            }
+
+            document.getElementById("result").value = result.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+<h2>Example</h2>
+<label>One: <input type="number" id="operand1"></label><br>
+<label>Two: <input type="number" id="operand2"></label><br>
+<label>What do you want:
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+</label><br>
+<button onclick="calculate()">Calculate</button><br>
+<label>result: <input type="number" id="result" disabled></label>
+</body>
+</html>
