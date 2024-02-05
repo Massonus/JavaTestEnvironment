@@ -1,4 +1,4 @@
-package com.test.task1;
+package com.test.Tests.DISpring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

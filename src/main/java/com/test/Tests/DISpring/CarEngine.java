@@ -1,4 +1,4 @@
-package com.test.task1;
+package com.test.Tests.DISpring;
 
 import org.springframework.stereotype.Component;
 

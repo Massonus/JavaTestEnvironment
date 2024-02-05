@@ -1,10 +1,19 @@
-package com.test.Test7;
+package com.test.Tests.Kat;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
-public class Kat1 {
+public class Kat {
     public static void main(String[] args) {
-        /*System.out.println(reverseString("draw"));*/
+        /*List<Integer> list = Arrays.asList(1, 1, 6, 3, 12, 8);
+        List<Integer> list1 = getList(list);
+        System.out.println(list1);*/
+        int[] array = {1, 2, 2};
+        int i = squareSum(array);
+        reverseString1("Hurry");
+        /*System.out.println(reverseString2("draw"));*/
         /*Integer i = convertFromStringToInt("1564");
         System.out.println(i);*/
         /*Object[] con = {"hay", "junk", "hay", "hay", true, "moreJunk", "needle", "randomJunk", 3};
@@ -19,7 +28,21 @@ public class Kat1 {
 
     }
 
-    public static String reverseString(String str) {
+    public static int squareSum(int[] n) {
+        return Arrays.stream(n)
+                .map(operand -> (int) Math.pow(operand, 2))
+                .sum();
+    }
+
+    public static String reverseString1(String str) {
+        StringBuilder reverse = new StringBuilder(str);
+        reverse.reverse();
+        String s = new String(reverse);
+        System.out.println(s);
+        return s;
+    }
+
+    public static String reverseString2(String str) {
         return new StringBuilder(str).reverse().toString();
     }
 
@@ -62,5 +85,12 @@ public class Kat1 {
 
     public static String numberToString(int num) {
         return "" + num;
+    }
+
+    public static List<Integer> getList(Collection<Integer> collection) {
+        return collection.stream()
+                .distinct()
+                .filter(integer -> integer > 2)
+                .collect(Collectors.toList());
     }
 }

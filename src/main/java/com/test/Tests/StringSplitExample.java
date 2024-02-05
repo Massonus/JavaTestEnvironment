@@ -1,6 +1,6 @@
-package com.test.Test7;
+package com.test.Tests;
 
-public class Main {
+public class StringSplitExample {
 
     public static void main(String[] args) {
         String string = "My, His, is,: ol";

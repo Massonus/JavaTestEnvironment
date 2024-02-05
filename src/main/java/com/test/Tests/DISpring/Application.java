@@ -1,4 +1,4 @@
-package com.test.task1;
+package com.test.Tests.DISpring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

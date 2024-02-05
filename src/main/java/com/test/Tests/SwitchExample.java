@@ -1,8 +1,8 @@
-package com.test.Test5;
+package com.test.Tests;
 
 import java.util.Scanner;
 
-public class Main {
+public class SwitchExample {
 
     public static void main(String[] args) {
 
