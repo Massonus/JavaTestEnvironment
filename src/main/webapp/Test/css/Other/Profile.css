@@ -1,0 +1,56 @@
+body {
+    background-color: DarkSlateGrey;
+    font-family: Arial, sans-serif;
+}
+
+h2, p {
+    text-align: center;
+    color: white;
+}
+
+
+#profile {
+    text-align: center;
+    display: inline;
+    padding: 15px;
+    color: #FFFFFF;
+}
+
+.active-day {
+    color: #00CC00;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.inactive-day {
+    color: #CCCCCC ;
+}
+
+#profile, #streak {
+    list-style: none;
+}
+
+#streak {
+    padding-top: 15px;
+    border: solid white;
+    border-radius: 5px;
+    color: #676767;
+}
+
+#streak ul{
+    display: inline;
+    padding: 5px;
+}
+
+#streak p{
+    display: inline;
+    padding: 10px;
+}
+
+@keyframes pulse {
+    0% {font: 100% bold;}
+    50% {font: 120% bold; color: black;}
+    10% {font: 100% bold;}
+}
+
