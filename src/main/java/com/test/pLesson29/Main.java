@@ -69,8 +69,8 @@ public class Main {
 
         teaList.stream()
                 .forEach(tea -> {
-            integerList.add(tea.getId());
-        });
+                    integerList.add(tea.getId());
+                });
 
         System.out.println(integerList);
 
@@ -106,7 +106,7 @@ public class Main {
         final long count = list.stream().count();
         System.out.println(count);
 
-        final String s = teaList.stream().map(teA -> teA.getName()).reduce((a,  c) -> a + c).get();
+        final String s = teaList.stream().map(teA -> teA.getName()).reduce((a, c) -> a + c).get();
         System.out.println(s);
 
         List<Integer> numbers = Arrays.asList(5, 10, 2, 8, 6);

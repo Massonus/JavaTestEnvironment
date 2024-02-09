@@ -24,7 +24,7 @@ public class CreateDynamicTest {
         return Arrays.asList(
                 DynamicTest.dynamicTest("addition test",
                         () -> assertEquals(2, calculator.addition(1, 1))),
-                DynamicTest.dynamicTest("division Test",
+                DynamicTest.dynamicTest("division Test.js",
                         () -> assertEquals(2, calculator.division(4, 2))));
     }
 
@@ -33,7 +33,7 @@ public class CreateDynamicTest {
         return Arrays.asList(
                 DynamicTest.dynamicTest("addition test",
                         () -> assertEquals(2, calculator.addition(1, 1))),
-                DynamicTest.dynamicTest("division Test",
+                DynamicTest.dynamicTest("division Test.js",
                         () -> assertEquals(2, calculator.division(4, 2))));
     }
 
@@ -42,7 +42,7 @@ public class CreateDynamicTest {
         return Arrays.asList(
                         DynamicTest.dynamicTest("Add test",
                                 () -> assertEquals(2, calculator.addition(1, 1))),
-                        DynamicTest.dynamicTest("Multiply Test",
+                        DynamicTest.dynamicTest("Multiply Test.js",
                                 () -> assertEquals(2, calculator.division(4, 2))))
                 .iterator();
     }

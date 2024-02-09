@@ -8,7 +8,7 @@ import org.junit.platform.suite.api.SuiteDisplayName;
 @Suite
 @SelectPackages({"org.test.pLesson36"})
 //@IncludeTags("DEV")
-@SuiteDisplayName("A demo Test Suite")
+@SuiteDisplayName("A demo Test.js Suite")
 public class SuiteExampleTest {
 
 }
