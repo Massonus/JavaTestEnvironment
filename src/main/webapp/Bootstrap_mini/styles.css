@@ -1,0 +1,38 @@
+.search {
+  display: flex;
+  background: linear-gradient(45deg, #333, #5A5454);
+  height: 40px;
+  border-radius: 50px;
+}
+
+.search:hover input {
+  width: 250px;
+  padding: 0 10px;
+}
+
+.search:hover button {
+  background-color: #E6E6E6;
+}
+
+.search input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  font-size: 18px;
+  color: #fff;
+  width: 0;
+  transition: .4s;
+}
+
+.search button {
+  color: #00B7FF;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  transition: .4s;
+}
