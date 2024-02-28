@@ -10,13 +10,14 @@
 	<link rel="stylesheet" href="main.css">
 
 	<link href="styles.css" rel="stylesheet">
+	<script src="changeStyle.js"></script>
 
 	<title>Hello, world!</title>
 </head>
 <body>
 
 
-	<nav class="navbar navbar-expand-lg navbar-light">
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">E-Shop</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,17 +26,25 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0 top-menu">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Home</a>
+						<a class="nav-link" href="#">HOME</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Catalog</a>
+						<a class="nav-link" href="#">CATALOG</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">News</a>
+						<a class="nav-link" href="#">NEWS</a>
 					</li>
 				</ul>
 
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<div id="search" class="search">
+							<input type="search" placeholder="Type to search">
+							<button id="search-button">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="far fa-user"></i></a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -89,13 +98,10 @@
 					</li>
 
 					<li class="nav-item">
-						<div class="search">
-							<input type="search" placeholder="Type to search">
-							<button>
-								<i class="fa fa-search"></i>
-							</button>
-						</div>
+					<input class="choose" type="checkbox" id="checker" onclick="changeStyle()">
+					<label class="chooseLabel" for="checker"></label>
 					</li>
+
 				</ul>
 			</div>
 		</div>

@@ -5,4 +5,4 @@ function changeStyle() {
 
     body.style.background = background;
     body.style.color = color;
-};
+}
