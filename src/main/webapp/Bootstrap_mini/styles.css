@@ -1,12 +1,16 @@
-.search {
-  display: flex;
-
-  background: linear-gradient(45deg, #333, #5A5454);
-  height: 40px;
+.search .search-input-dark{
+  background: linear-gradient(45deg, #A9A9A9, #FFF8DC);
+  height: 34px;
   border-radius: 50px;
 }
 
-.search:hover input {
+.search .search-input-light{
+  background: linear-gradient(45deg, #333, #5A5454);
+  height: 34px;
+  border-radius: 50px;
+}
+
+.search:hover #search-input {
   width: 250px;
   padding: 0 10px;
   margin: 4px;
@@ -37,7 +41,7 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-  background-color: #333;
+  background-color: #212529;
   font-size: 20px;
   cursor: pointer;
   transition: .4s;
