@@ -9,9 +9,13 @@ function changeStyle() {
         nav.className = "navbar navbar-expand-lg navbar-dark bg-dark ";
         searchButton.className = "search-button-dark";
         searchInput.className = "search-input-dark";
+
     } else {
         nav.className = "navbar navbar-expand-lg navbar-light bg-light";
         searchButton.className = "search-button-light";
         searchInput.className = "search-input-light";
+
+
+
     }
 }
