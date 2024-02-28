@@ -12,7 +12,11 @@
   margin: 4px;
 }
 
-.search:hover #search-button {
+.search:hover .search-button-light {
+  background-color: #00B7FF;
+}
+
+.search:hover .search-button-dark {
   background-color: #E6E6E6;
 }
 
@@ -27,13 +31,25 @@
   transition: .4s;
 }
 
-#search-button {
+.search .search-button-dark {
   color: #00B7FF;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: none;
   background-color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.search .search-button-light {
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #F8F9FA;
   font-size: 20px;
   cursor: pointer;
   transition: .4s;
