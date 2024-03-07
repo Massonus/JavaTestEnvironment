@@ -107,9 +107,6 @@ header{
 .menu li + li{
   padding-left: 10px;
 }
-#modal{
-  display: none;
-}
 .slider{
   background-image: url(../img/slider-fon.jpg);
   background-repeat: no-repeat;
@@ -662,6 +659,7 @@ header{
 }
 #modal{
   width: 300px;
+  display: none;
 }
 #modal input{
   display: block;
