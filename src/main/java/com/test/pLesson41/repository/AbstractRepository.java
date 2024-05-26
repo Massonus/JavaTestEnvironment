@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 public abstract class AbstractRepository {
     @SneakyThrows
     public static Connection createCon() {
-        final String url = "jdbc:postgresql://localhost:5432/Test.js";
+        final String url = "jdbc:postgresql://localhost:5432/Testaaaa.js";
         final String username = "postgres";
         final String password = "root";
         Class.forName("org.postgresql.Driver").getDeclaredConstructor().newInstance();
